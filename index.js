@@ -32,26 +32,21 @@ var handlers = {
         this.emit('WelcomeFunc');
     },
     'GetSAPHANAIntent': function () {
-       //var airline = intent.slots.airline.value;
 	   this.emit('GetFact');
     },
 
 
 
     'GetFact': function () {
-        // Get a random space fact from the space facts list
-        // Use this.t() to get corresponding language data
-         //this.emit('GetFromHANA');
-          
 		  
-		var options_auth={user:"SDSADMIN",password:"Aug6bday"}
-        var client = new Client(options_auth)
+	//	var options_auth={user:"SYSTEM",password:"password"}
+        var client = new Client()
         var Amount;
         var curr;
-		var airline = this.event.request.intent.slots.airline.value;
-		var th = this;
-		var url = 'https://cdhcpwe996cf12.sap.hana.ondemand.com/fitbit/test_alex.xsjs?airline=' + airline;
-		 client.get(url, function(data, response){
+	var airline = this.event.request.intent.slots.airline.value;
+	var th = this;
+	var url = 'https://cdhcpwe996cf12.sap.hana.ondemand.com/fitbit/test_alex.xsjs?airline=' + airline;
+	client.get(url, function(data, response){
 
 		     Amount = data.amount;
 		     curr = data.curr;
