@@ -71,7 +71,7 @@ var handlers = {
 
     'WelcomeFunc': function () {
         
-        var speechOutput = 'Welcome to S A P Hana created by XXNameXX. Say, get revenue of, followed by an airline name'
+        var speechOutput = 'Welcome to S A P Hana created by, XXNameXX. Say, get revenue of, followed by an airline name'
         this.emit(':ask', speechOutput, 'Please say an airline name')
     },
     'AMAZON.HelpIntent': function () {
